@@ -149,3 +149,4 @@ export const PublicNavbar: React.FC = () => {
     </header>
   );
 };
+

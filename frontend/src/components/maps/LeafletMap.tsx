@@ -178,3 +178,4 @@ export const LeafletMap: React.FC<LeafletMapProps> = ({
     </div>
   );
 };
+

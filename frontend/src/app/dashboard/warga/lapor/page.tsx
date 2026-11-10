@@ -102,6 +102,12 @@ export default function SubmitComplaintPage() {
       return;
     }
 
+    // Validasi Boundary Geografis Kota Bandar Lampung & Lampung
+    if (latitude < -6.0 || latitude > -4.5 || longitude < 104.5 || longitude > 106.0) {
+      setErrorMsg("Titik lokasi yang Anda pilih berada di luar wilayah yurisdiksi Kota Bandar Lampung dan Provinsi Lampung.");
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -416,3 +422,4 @@ export default function SubmitComplaintPage() {
     </div>
   );
 }
+

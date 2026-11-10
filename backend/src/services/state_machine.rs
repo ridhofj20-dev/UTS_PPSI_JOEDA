@@ -28,6 +28,28 @@ impl StateMachine {
                 }
             }
 
+            // SUBMITTED -> VERIFIED (Admin Instansi langsung menyetujui saat triage)
+            (ComplaintStatus::Submitted, ComplaintStatus::Verified) => {
+                if *actor_role == UserRole::AgencyAdmin {
+                    Ok(())
+                } else {
+                    Err(AppError::Forbidden(
+                        "Hanya Admin Instansi yang dapat memverifikasi aduan".to_string(),
+                    ))
+                }
+            }
+
+            // SUBMITTED -> REJECTED (Admin Instansi langsung menolak aduan tidak valid saat triage)
+            (ComplaintStatus::Submitted, ComplaintStatus::Rejected) => {
+                if *actor_role == UserRole::AgencyAdmin {
+                    Ok(())
+                } else {
+                    Err(AppError::Forbidden(
+                        "Hanya Admin Instansi yang dapat menolak aduan".to_string(),
+                    ))
+                }
+            }
+
             // UNDER_REVIEW -> VERIFIED (Admin Instansi menyetujui)
             (ComplaintStatus::UnderReview, ComplaintStatus::Verified) => {
                 if *actor_role == UserRole::AgencyAdmin {
@@ -96,6 +118,17 @@ impl StateMachine {
                     Err(AppError::Forbidden(
                         "Penutupan laporan hanya dapat dilakukan oleh pelapor atau admin"
                             .to_string(),
+                    ))
+                }
+            }
+
+            // REJECTED -> CLOSED (Admin mengarsipkan aduan yang telah ditolak)
+            (ComplaintStatus::Rejected, ComplaintStatus::Closed) => {
+                if *actor_role == UserRole::AgencyAdmin || *actor_role == UserRole::SuperAdmin {
+                    Ok(())
+                } else {
+                    Err(AppError::Forbidden(
+                        "Hanya Admin yang dapat mengarsipkan aduan yang ditolak".to_string(),
                     ))
                 }
             }

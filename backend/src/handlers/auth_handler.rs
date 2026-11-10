@@ -2,7 +2,7 @@ use crate::config::AppConfig;
 use crate::errors::AppError;
 use crate::middleware::AuthUser;
 use crate::models::{AuthResponse, LoginDto, RegisterDto, UserProfileDto};
-use crate::repositories::UserRepo;
+use crate::repositories::{MasterRepo, UserRepo};
 use crate::services::AuthService;
 use axum::{extract::State, Json};
 use serde_json::json;
@@ -93,6 +93,15 @@ pub async fn login(
     // 2. Verifikasi Password dengan Argon2id
     let is_valid = AuthService::verify_password(&dto.password, &user.password_hash)?;
     if !is_valid {
+        let _ = MasterRepo::record_audit_log(
+            &pool,
+            Some(user.id),
+            "LOGIN_FAILED",
+            "AUTH",
+            Some(&user.id.to_string()),
+            json!({ "reason": "Invalid password" }),
+        )
+        .await;
         return Err(AppError::AuthError("Email atau kata sandi tidak valid".to_string()));
     }
 
@@ -104,6 +113,17 @@ pub async fn login(
     let profile = UserRepo::get_profile_by_id(&pool, user.id)
         .await?
         .ok_or_else(|| AppError::InternalServerError("Gagal memuat profil pengguna".to_string()))?;
+
+    // Catat Login Berhasil ke Audit Log
+    let _ = MasterRepo::record_audit_log(
+        &pool,
+        Some(user.id),
+        "LOGIN_SUCCESS",
+        "AUTH",
+        Some(&user.id.to_string()),
+        json!({ "role": profile.role }),
+    )
+    .await;
 
     // 4. Generate JWT Token
     let config = AppConfig::from_env()

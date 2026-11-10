@@ -2,14 +2,16 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import { DashboardSidebar } from "@/components/layouts/DashboardSidebar";
 import { DashboardTopbar } from "@/components/layouts/DashboardTopbar";
 import { StatusBadge } from "@/components/ui/StatusBadge";
 import { apiFetch } from "@/lib/api-client";
 
-export default function OfficerTaskDetailPage({ params }: { params: { id: string } }) {
+export default function OfficerTaskDetailPage() {
   const router = useRouter();
+  const routeParams = useParams();
+  const taskId = (routeParams?.id as string) || "55555555-5555-5555-5555-555555555555";
 
   const [currentStatus, setCurrentStatus] = useState("IN_PROGRESS");
   const [progressNotes, setProgressNotes] = useState(
@@ -30,7 +32,7 @@ export default function OfficerTaskDetailPage({ params }: { params: { id: string
     setAlertMsg(null);
 
     try {
-      await apiFetch(`/complaints/${params.id}/status`, {
+      await apiFetch(`/complaints/${taskId}/status`, {
         method: "POST",
         body: JSON.stringify({
           to_status: newStatus,
@@ -209,3 +211,4 @@ export default function OfficerTaskDetailPage({ params }: { params: { id: string
     </div>
   );
 }
+

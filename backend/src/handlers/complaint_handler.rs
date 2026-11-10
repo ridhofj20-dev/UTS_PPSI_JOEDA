@@ -22,15 +22,16 @@ pub async fn create_complaint(
     // Hanya Warga (atau Super Admin) yang dapat membuat laporan
     auth.require_role(&[UserRole::Citizen, UserRole::SuperAdmin])?;
 
-    // Validasi Koordinat Latitude & Longitude
-    if dto.latitude < -90.0 || dto.latitude > 90.0 {
+    // Validasi Koordinat Latitude & Longitude (Rentang Global & Boundary Provinsi Lampung / Bandar Lampung)
+    if dto.latitude < -90.0 || dto.latitude > 90.0 || dto.longitude < -180.0 || dto.longitude > 180.0 {
         return Err(AppError::BadRequest(
-            "Nilai latitude di luar rentang valid (-90 hingga 90)".to_string(),
+            "Nilai koordinat geografis di luar rentang valid global".to_string(),
         ));
     }
-    if dto.longitude < -180.0 || dto.longitude > 180.0 {
+
+    if dto.latitude < -6.0 || dto.latitude > -4.5 || dto.longitude < 104.5 || dto.longitude > 106.0 {
         return Err(AppError::BadRequest(
-            "Nilai longitude di luar rentang valid (-180 hingga 180)".to_string(),
+            "Titik koordinat berada di luar wilayah yurisdiksi Kota Bandar Lampung dan Provinsi Lampung".to_string(),
         ));
     }
 
@@ -88,6 +89,11 @@ pub async fn get_detail(
         .unwrap_or(false);
 
         if !is_owner {
+            if detail.visibility != "PUBLIC" {
+                return Err(AppError::Forbidden(
+                    "Anda tidak memiliki izin untuk melihat rincian pengaduan privat ini".to_string(),
+                ));
+            }
             detail.complainant_name = Some("Warga Kota Bandar Lampung (Disamarkan)".to_string());
         }
     }
@@ -288,6 +294,12 @@ pub async fn update_status(
         .ok_or_else(|| AppError::InternalServerError("Status saat ini tidak valid".to_string()))?;
 
     let role = auth.role().unwrap_or(UserRole::Officer);
+
+    // Pastikan Petugas atau Admin OPD hanya dapat memperbarui aduan dalam lingkup dinasnya
+    if role != UserRole::SuperAdmin {
+        auth.require_agency(current.1)?;
+    }
+
     StateMachine::validate_transition(&current_status, &target_status, &role)?;
 
     ComplaintRepo::update_status(

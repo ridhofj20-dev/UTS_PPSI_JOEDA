@@ -143,7 +143,7 @@ export default function PublicPortalPage() {
               </div>
               <button
                 type="button"
-                className="w-full sm:w-auto px- space-md py-2.5 rounded-lg bg-secondary text-on-secondary text-xs font-bold hover:bg-secondary-container transition-all"
+                className="w-full sm:w-auto px-space-md py-2.5 rounded-lg bg-secondary text-on-secondary text-xs font-bold hover:bg-secondary-container transition-all"
               >
                 Lacak Laporan
               </button>

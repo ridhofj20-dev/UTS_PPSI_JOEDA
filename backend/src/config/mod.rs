@@ -9,6 +9,7 @@ pub struct AppConfig {
     pub jwt_expiration_hours: i64,
     pub environment: String,
     pub upload_dir: String,
+    pub allowed_origins: String,
 }
 
 impl AppConfig {
@@ -34,6 +35,7 @@ impl AppConfig {
 
         let environment = env::var("APP_ENV").unwrap_or_else(|_| "development".to_string());
         let upload_dir = env::var("UPLOAD_DIR").unwrap_or_else(|_| "./uploads".to_string());
+        let allowed_origins = env::var("ALLOWED_ORIGINS").unwrap_or_else(|_| "*".to_string());
 
         Ok(Self {
             server_host,
@@ -43,6 +45,7 @@ impl AppConfig {
             jwt_expiration_hours,
             environment,
             upload_dir,
+            allowed_origins,
         })
     }
 }

@@ -105,3 +105,4 @@ export interface CategoryItem {
   icon?: string;
   is_active: boolean;
 }
+

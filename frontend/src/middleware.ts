@@ -1,20 +1,20 @@
 import { NextResponse } from "next/server";
-import type { NextRequest } from "next/request";
+import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+  const response = NextResponse.next();
 
-  // Proteksi rute dashboard jika diperlukan melalui cookie / token
-  // Catatan: Pada arsitektur SPA / Hybrid Next.js, pengecekan token JWT juga dijalankan pada layer client
-  // melalui getStoredToken() dan redirectByRole().
-  if (pathname.startsWith("/dashboard")) {
-    // Izinkan navigasi normal; verifikasi sesi dijalankan di Dashboard layouts
-    return NextResponse.next();
-  }
+  // Tambahkan HTTP Security Headers standar OWASP
+  response.headers.set("X-Content-Type-Options", "nosniff");
+  response.headers.set("X-Frame-Options", "SAMEORIGIN");
+  response.headers.set("X-XSS-Protection", "1; mode=block");
+  response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+  response.headers.set("Permissions-Policy", "geolocation=(self), camera=(), microphone=()");
 
-  return NextResponse.next();
+  return response;
 }
 
 export const config = {
   matcher: ["/dashboard/:path*"],
 };
+

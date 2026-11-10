@@ -1,0 +1,91 @@
+# ==============================================================================
+# LAMPUNG REPORT — PRODUCTION DOCKER COMPOSE ORCHESTRATION
+# Full-stack deployment with network isolation and persistent storage
+# ==============================================================================
+
+version: '3.8'
+
+services:
+  # 1. PostgreSQL Database Service
+  postgres:
+    image: postgres:16-alpine
+    container_name: lampung-report-prod-db
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-lampung_admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-SuperSecretSecurePassword2026!}
+      POSTGRES_DB: ${POSTGRES_DB:-lampung_report_prod}
+    volumes:
+      - pgdata_prod:/var/lib/postgresql/data
+      - ./backend/migrations/20261110000001_create_schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+      - ./backend/migrations/20261110000002_seed_initial_data.sql:/docker-entrypoint-initdb.d/02_seed.sql:ro
+    networks:
+      - internal_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-lampung_admin} -d ${POSTGRES_DB:-lampung_report_prod}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # 2. Rust Axum Backend REST API Service
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: lampung-report-prod-backend
+    restart: always
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      SERVER_HOST: 0.0.0.0
+      SERVER_PORT: 8080
+      APP_ENV: production
+      DATABASE_URL: postgres://${POSTGRES_USER:-lampung_admin}:${POSTGRES_PASSWORD:-SuperSecretSecurePassword2026!}@postgres:5432/${POSTGRES_DB:-lampung_report_prod}
+      JWT_SECRET: ${JWT_SECRET:-production-cryptographic-jwt-secret-key-lampung-report-2026}
+      JWT_EXPIRATION_HOURS: 24
+      UPLOAD_DIR: /app/uploads
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost:3000,https://lampung-report.vercel.app}
+    volumes:
+      - uploads_prod:/app/uploads
+    ports:
+      - "8080:8080"
+    networks:
+      - internal_network
+      - public_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+
+  # 3. Next.js 14 Frontend Service
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: lampung-report-prod-frontend
+    restart: always
+    depends_on:
+      - backend
+    environment:
+      NODE_ENV: production
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:8080/api/v1}
+    ports:
+      - "3000:3000"
+    networks:
+      - public_network
+
+volumes:
+  pgdata_prod:
+    driver: local
+  uploads_prod:
+    driver: local
+
+networks:
+  internal_network:
+    driver: bridge
+    internal: true
+  public_network:
+    driver: bridge
+

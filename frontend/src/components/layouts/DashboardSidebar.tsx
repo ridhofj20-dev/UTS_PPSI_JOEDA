@@ -159,3 +159,4 @@ export const DashboardSidebar: React.FC<SidebarProps> = ({ role, userName, agenc
     </aside>
   );
 };
+

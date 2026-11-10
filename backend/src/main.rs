@@ -58,11 +58,23 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
     };
 
-    // 4. Setup CORS Middleware
-    let cors = CorsLayer::new()
-        .allow_origin(Any)
-        .allow_methods(Any)
-        .allow_headers(Any);
+    // 4. Setup CORS Middleware dengan Dukungan Whitelist Domain Aman
+    let cors = if config.environment == "production" && config.allowed_origins != "*" {
+        let origins: Vec<_> = config
+            .allowed_origins
+            .split(',')
+            .filter_map(|s| s.trim().parse().ok())
+            .collect();
+        CorsLayer::new()
+            .allow_origin(origins)
+            .allow_methods(Any)
+            .allow_headers(Any)
+    } else {
+        CorsLayer::new()
+            .allow_origin(Any)
+            .allow_methods(Any)
+            .allow_headers(Any)
+    };
 
     // 5. Build Axum Router dengan Shared State (PgPool)
     let app = routes::create_router(pool)

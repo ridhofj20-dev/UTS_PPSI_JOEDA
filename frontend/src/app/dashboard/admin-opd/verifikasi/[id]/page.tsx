@@ -2,14 +2,16 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import { DashboardSidebar } from "@/components/layouts/DashboardSidebar";
 import { DashboardTopbar } from "@/components/layouts/DashboardTopbar";
 import { StatusBadge } from "@/components/ui/StatusBadge";
 import { apiFetch } from "@/lib/api-client";
 
-export default function VerificationExecutionPage({ params }: { params: { id: string } }) {
+export default function VerificationExecutionPage() {
   const router = useRouter();
+  const routeParams = useParams();
+  const complaintId = (routeParams?.id as string) || "55555555-5555-5555-5555-555555555555";
 
   const [decision, setDecision] = useState<"ACCEPT" | "REJECT" | "FORWARD">("ACCEPT");
   const [priority, setPriority] = useState("HIGH");
@@ -30,13 +32,13 @@ export default function VerificationExecutionPage({ params }: { params: { id: st
     try {
       if (decision === "ACCEPT") {
         // Step 1: Verify
-        await apiFetch(`/complaints/${params.id}/verify`, {
+        await apiFetch(`/complaints/${complaintId}/verify`, {
           method: "POST",
           body: JSON.stringify({ priority, notes: verificationNotes }),
         });
 
         // Step 2: Assign Officer
-        await apiFetch(`/complaints/${params.id}/assign`, {
+        await apiFetch(`/complaints/${complaintId}/assign`, {
           method: "POST",
           body: JSON.stringify({
             officer_id: officerId,
@@ -52,7 +54,7 @@ export default function VerificationExecutionPage({ params }: { params: { id: st
           return;
         }
 
-        await apiFetch(`/complaints/${params.id}/reject`, {
+        await apiFetch(`/complaints/${complaintId}/reject`, {
           method: "POST",
           body: JSON.stringify({ reason: rejectionReason }),
         });
@@ -265,3 +267,4 @@ export default function VerificationExecutionPage({ params }: { params: { id: st
     </div>
   );
 }
+
