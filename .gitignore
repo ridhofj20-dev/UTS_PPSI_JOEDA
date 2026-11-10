@@ -1,0 +1,11 @@
+# Root Git Ignore
+node_modules/
+target/
+dist/
+.next/
+out/
+.env
+.env.local
+.DS_Store
+*.log
+

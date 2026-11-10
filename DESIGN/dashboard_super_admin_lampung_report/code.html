@@ -1,0 +1,709 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "on-tertiary-fixed-variant": "#614000",
+        "secondary-fixed": "#dbe1ff",
+        "tertiary-fixed": "#ffddb0",
+        "surface": "#f8f9ff",
+        "secondary-fixed-dim": "#b4c5ff",
+        "on-primary-fixed-variant": "#30476a",
+        "inverse-surface": "#213145",
+        "on-secondary-fixed": "#00174b",
+        "tertiary-container": "#392400",
+        "on-secondary": "#ffffff",
+        "surface-container": "#e5eeff",
+        "on-tertiary": "#ffffff",
+        "on-error-container": "#93000a",
+        "primary-fixed": "#d5e3ff",
+        "surface-dim": "#cbdbf5",
+        "on-error": "#ffffff",
+        "secondary-container": "#316bf3",
+        "on-background": "#0b1c30",
+        "on-surface": "#0b1c30",
+        "tertiary-fixed-dim": "#ffba46",
+        "error-container": "#ffdad6",
+        "on-primary-fixed": "#001b3b",
+        "surface-container-lowest": "#ffffff",
+        "on-tertiary-container": "#c18300",
+        "outline": "#74777f",
+        "on-tertiary-fixed": "#281800",
+        "surface-container-low": "#eff4ff",
+        "on-primary-container": "#7a91b7",
+        "surface-variant": "#d3e4fe",
+        "surface-container-highest": "#d3e4fe",
+        "primary-container": "#0f294a",
+        "background": "#f8f9ff",
+        "surface-container-high": "#dce9ff",
+        "tertiary": "#1f1100",
+        "secondary": "#0051d5",
+        "on-primary": "#ffffff",
+        "on-secondary-container": "#fefcff",
+        "error": "#ba1a1a",
+        "inverse-on-surface": "#eaf1ff",
+        "surface-tint": "#485f83",
+        "on-surface-variant": "#44474e",
+        "surface-bright": "#f8f9ff",
+        "on-secondary-fixed-variant": "#003ea8",
+        "outline-variant": "#c4c6cf",
+        "inverse-primary": "#b0c8f1",
+        "primary": "#00142f",
+        "primary-fixed-dim": "#b0c8f1"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "space-md": "1rem",
+        "space-xl": "2rem",
+        "gutter-mobile": "1rem",
+        "gutter": "1.5rem",
+        "space-lg": "1.5rem",
+        "space-2xl": "3rem",
+        "margin": "2rem",
+        "space-sm": "0.5rem",
+        "margin-mobile": "1rem",
+        "space-xs": "0.25rem"
+      },
+      "fontFamily": {
+        "label-sm": ["Inter"],
+        "headline-md": ["Plus Jakarta Sans"],
+        "headline-lg": ["Plus Jakarta Sans"],
+        "headline-lg-mobile": ["Plus Jakarta Sans"],
+        "body-sm": ["Inter"],
+        "headline-xl": ["Plus Jakarta Sans"],
+        "headline-sm": ["Plus Jakarta Sans"],
+        "body-md": ["Inter"],
+        "headline-xl-mobile": ["Plus Jakarta Sans"],
+        "body-lg": ["Inter"],
+        "label-md": ["Inter"],
+        "metric-display": ["Plus Jakarta Sans"],
+        "label-lg": ["Inter"]
+      },
+      "fontSize": {
+        "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}],
+        "headline-md": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "headline-lg-mobile": ["22px", {"lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+        "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+        "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+        "headline-xl-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+        "metric-display": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+        "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "600"}]
+      }
+    }
+  }
+};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="px-space-lg py-space-md flex items-center gap-space-sm"><div class="flex items-center gap-2"><img alt="Logo Pemkot Bandar Lampung" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxQI287hFHGhushfZEVHcRUAKNpQgW-8ZmPcKEA5-er1Rfk0XP7R02CijfOkz8oBFMeZt7dzV2shQv_KUNfM8qr7z4KuLMhbK4UEKcNkBF5FxIInnV5gfqe0xMF4z_WedUw3qJFQ3WZxqfH0YoIfn8IjPSw3a8Ks5PibMpeuGDuoPMfNgsnxHhKr4ZVrNq2BLwkis7WW2tkrM8-Pm4QDkekS1RTMO5qopadU1VISMN6F_CJ2FwRd5p"><img alt="Logo Universitas Teknokrat Indonesia" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDursGCKZxGeMS_eTLlhHA4N8jEYEbb4-qLAYwOW4dBkRZJtkh0sU1Q6aW98MrCF3GcPwdwyFvGw1qHDrNu22mvnbUUG0bzZ89vIc0rZXmh3pJ5I7r9hh87tsMEc8PfvEr1XnuhyYOOxYyKRfUgSIss6cQ__2BSz1de-A6n17UDdw0rOtBwaJlqejK-h8dc9Agl2p2PeksihE__fC5PDT8QAB4iCD3GAg1EhuOhuurih5BuQW5cG2md"></div><div class="flex flex-col ml-space-xs"><span class="font-headline-sm text-headline-sm text-primary tracking-tight leading-tight">LAMPUNG REPORT</span><span class="font-label-sm text-label-sm text-secondary uppercase">Kota Bandar Lampung</span></div></div><div class="px-space-md py-space-xs"><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-bold shadow-sm"><div class="px-space-sm pt-space-sm pb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">UTAMA &amp; ANALITIK</div><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg transition-all bg-primary-container text-on-primary font-bold shadow-sm" data-path="dashboard-super-admin" href="#"><span class="material-symbols-outlined text-xl">dashboard</span>Dashboard Super Admin</a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="analitik-kota-kpi-opd" href="#"><span class="material-symbols-outlined text-xl">analytics</span>Analitik Kota &amp; KPI OPD</a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="peta-spasial-geografis" href="#"><span class="material-symbols-outlined text-xl">map</span>Peta Spasial Geografis</a><div class="px-space-sm pt-space-md pb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">TATA KELOLA PENGGUNA</div><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="manajemen-pengguna" href="#"><span class="material-symbols-outlined text-xl">manage_accounts</span>Manajemen Pengguna</a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="hak-akses-peran" href="#"><span class="material-symbols-outlined text-xl">admin_panel_settings</span>Hak Akses &amp; Peran (Role)</a><div class="px-space-sm pt-space-md pb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">MANAJEMEN INSTANSI &amp; SISTEM</div><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="kelola-opd-dinas" href="#"><span class="material-symbols-outlined text-xl">apartment</span>Kelola OPD / Dinas</a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="kategori-taksonomi-aduan" href="#"><span class="material-symbols-outlined text-xl">category</span>Kategori &amp; Taksonomi Aduan</a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="manajemen-20-kecamatan" href="#"><span class="material-symbols-outlined text-xl">location_city</span>Manajemen 20 Kecamatan</a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="konfigurasi-sla-aturan-ai" href="#"><span class="material-symbols-outlined text-xl">tune</span>Konfigurasi SLA &amp; Aturan AI</a><div class="px-space-sm pt-space-md pb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">KEAMANAN &amp; PENGAWASAN</div><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="audit-log-aktivitas" href="#"><span class="material-symbols-outlined text-xl">history_toggle_off</span>Audit Log Aktivitas</a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="pengaturan-sistem-backup" href="#"><span class="material-symbols-outlined text-xl">settings_backup_restore</span>Pengaturan Sistem &amp; Backup</a></nav></div></div><div class="p-space-md bg-surface-container mt-space-md"><div class="bg-surface-container-lowest p-space-sm rounded-lg mb-space-sm flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface">SIAP v4.2 - Enkripsi SHA-256</span></div><span class="material-symbols-outlined text-on-surface-variant text-base">verified_user</span></div><a class="flex items-center justify-center gap-space-xs w-full py-2 bg-surface-container-highest hover:bg-error-container text-on-surface hover:text-on-error-container transition-colors rounded-lg font-label-md text-label-md" data-path="logout" href="#"><span class="material-symbols-outlined text-base">logout</span>Keluar Sistem</a></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-20 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-3"><img alt="Logo Pemkot Bandar Lampung" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxQI287hFHGhushfZEVHcRUAKNpQgW-8ZmPcKEA5-er1Rfk0XP7R02CijfOkz8oBFMeZt7dzV2shQv_KUNfM8qr7z4KuLMhbK4UEKcNkBF5FxIInnV5gfqe0xMF4z_WedUw3qJFQ3WZxqfH0YoIfn8IjPSw3a8Ks5PibMpeuGDuoPMfNgsnxHhKr4ZVrNq2BLwkis7WW2tkrM8-Pm4QDkekS1RTMO5qopadU1VISMN6F_CJ2FwRd5p"><img alt="Logo Teknokrat" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDursGCKZxGeMS_eTLlhHA4N8jEYEbb4-qLAYwOW4dBkRZJtkh0sU1Q6aW98MrCF3GcPwdwyFvGw1qHDrNu22mvnbUUG0bzZ89vIc0rZXmh3pJ5I7r9hh87tsMEc8PfvEr1XnuhyYOOxYyKRfUgSIss6cQ__2BSz1de-A6n17UDdw0rOtBwaJlqejK-h8dc9Agl2p2PeksihE__fC5PDT8QAB4iCD3GAg1EhuOhuurih5BuQW5cG2md"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">LAMPUNG REPORT</span><span class="font-label-sm text-label-sm text-on-surface-variant">Super Admin Kota &amp; Diskominfotik</span></div></div></div><div class="flex items-center gap-space-md"><div class="hidden xl:flex items-center gap-2 px-space-sm py-1.5 bg-surface-container rounded-full"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm text-on-surface">Server Utama Aktif - Database Replikasi Real-time</span></div><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline text-lg">search</span><input class="w-64 pl-9 pr-3 py-1.5 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-all" placeholder="Cari tiket, NIK, OPD, atau log..." type="text"></div><div class="relative cursor-pointer p-2 rounded-full hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-on-surface-variant">notifications</span><span class="absolute top-1 right-1 w-4 h-4 bg-error text-on-error font-label-sm text-[10px] leading-none rounded-full flex items-center justify-center font-bold">5</span></div><div class="h-8 w-px bg-surface-container-high"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface">Dr. H. Ahmad Fauzi, M.T.</span><span class="font-body-sm text-body-sm text-on-surface-variant">Super Admin Pemkot Bandar Lampung</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/ALJJyrCmvQuoEO00OV6sAX9U7qSWhwSiM1Sgqv0xSkxjPZoIiww5K9Py1Y2r4eE0TNRgQJPMeplGG-ROXfnPLNR53aFzgvQeDOSF3a7HPO12N8FwKczaJ0gGy4m28PU8eJC2jxvuzTDmWiAb-3zF5YpbLjGuMEiNy2RMPUNocNllpnqV55gvwQFl3hd6uY9Rma6s6jSNty4eSQt6yy7ghBnW6bzDvfnACA3ImyNG7pJMmpz7bLsXErNRbrem3w"></div></div></header><main class="w-full pt-20 bg-surface flex-1 px-space-lg py-space-lg"><div class="flex flex-col w-full">
+<!-- TOP EXECUTIVE BANNER -->
+<div class="relative bg-primary-container text-on-primary rounded-xl p-space-lg mb-space-lg overflow-hidden shadow-sm">
+<div class="absolute -right-8 -bottom-10 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[240px]">shield</span>
+</div>
+<div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="max-w-3xl">
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary font-label-sm text-label-sm tracking-wider uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-bright animate-ping"></span>
+            Live Command Center
+          </span>
+<span class="text-surface-variant font-label-sm text-label-sm">| Bandar Lampung Smart Governance v4.2</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg tracking-tight text-surface-bright mb-space-xs">
+          Pusat Komando &amp; Tata Kelola Sistem Pengaduan Kota Bandar Lampung
+        </h1>
+<p class="font-body-md text-body-md text-surface-variant max-w-2xl">
+          Monitoring lintas 18 Organisasi Perangkat Daerah (OPD), 20 Kecamatan, dan 126 Kelurahan secara terpusat dan real-time.
+        </p>
+</div>
+<!-- Quick Action Buttons -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<button class="flex items-center gap-2 px-space-md py-2.5 rounded-lg bg-surface-container-lowest text-primary font-label-lg text-label-lg hover:bg-surface-variant transition-all shadow-sm">
+<span class="material-symbols-outlined text-lg text-secondary">picture_as_pdf</span>
+          Unduh Laporan Eksekutif Kota (PDF)
+        </button>
+<button class="flex items-center gap-2 px-space-md py-2.5 rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg hover:bg-on-secondary-fixed-variant transition-all shadow-sm">
+<span class="material-symbols-outlined text-lg">tune</span>
+          Konfigurasi SLA Global
+        </button>
+<button class="flex items-center gap-2 px-space-md py-2.5 rounded-lg bg-surface-container-high/20 backdrop-blur-md text-surface-bright hover:bg-surface-container-high/30 transition-all font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-lg">history_toggle_off</span>
+          Audit Log Sistem
+        </button>
+</div>
+</div>
+</div>
+<!-- 4 PRIMARY KPI METRIC CARDS -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md mb-space-lg">
+<!-- Card 1: Total Aduan -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="absolute top-0 left-0 right-0 h-1 bg-secondary"></div>
+<div>
+<div class="flex items-center justify-between text-outline mb-space-xs"><div class="flex items-center gap-2"><span class="font-label-md text-label-md tracking-wider uppercase">Total Aduan Kota (2026)</span><span class="px-1.5 py-0.5 rounded bg-surface-container text-secondary font-label-sm text-[10px] font-bold">Data Simulasi</span></div><span class="p-1.5 rounded-lg bg-surface-container-low text-secondary material-symbols-outlined text-lg">campaign</span></div>
+<div class="font-metric-display text-metric-display text-primary mb-1">
+          14.820
+        </div>
+<div class="font-body-sm text-body-sm text-outline mb-space-sm">
+          Laporan masuk terverifikasi
+        </div>
+</div>
+<div class="pt-space-xs bg-surface-container-low/50 -mx-space-md -mb-space-md px-space-md py-2 flex items-center justify-between text-on-surface">
+<span class="inline-flex items-center font-label-sm text-label-sm text-secondary font-bold">
+<span class="material-symbols-outlined text-sm mr-0.5">trending_up</span> +14.2% vs 2025
+        </span>
+<span class="font-body-sm text-body-sm text-outline">98.2% Valid Dukcapil</span>
+</div>
+</div>
+<!-- Card 2: Indeks Kepuasan -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="absolute top-0 left-0 right-0 h-1 bg-tertiary-fixed-dim"></div>
+<div>
+<div class="flex items-center justify-between text-outline mb-space-xs"><div class="flex items-center gap-2"><span class="font-label-md text-label-md tracking-wider uppercase">Indeks Kepuasan (IKP)</span><span class="px-1.5 py-0.5 rounded bg-surface-container text-on-tertiary-container font-label-sm text-[10px] font-bold">Data Simulasi</span></div><span class="p-1.5 rounded-lg bg-surface-container-low text-on-tertiary-container material-symbols-outlined text-lg">hotel_class</span></div>
+<div class="flex items-baseline gap-1.5 mb-1">
+<span class="font-metric-display text-metric-display text-primary">94.8</span>
+<span class="font-headline-sm text-headline-sm text-outline">/ 100</span>
+</div>
+<div class="font-body-sm text-body-sm text-outline mb-space-sm">
+          Predikat Sangat Baik (A+)
+        </div>
+</div>
+<div class="pt-space-xs bg-surface-container-low/50 -mx-space-md -mb-space-md px-space-md py-2 flex items-center justify-between text-on-surface">
+<span class="inline-flex items-center font-label-sm text-label-sm text-on-tertiary-fixed font-bold"><span class="material-symbols-outlined text-sm mr-0.5">verified</span> Standar Evaluasi Pelayanan Publik (Simulasi Riset)</span>
+<span class="font-body-sm text-body-sm text-outline">Akuntabilitas Tinggi</span>
+</div>
+</div>
+<!-- Card 3: Kepatuhan SLA -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="absolute top-0 left-0 right-0 h-1 bg-secondary-container"></div>
+<div>
+<div class="flex items-center justify-between text-outline mb-space-xs"><div class="flex items-center gap-2"><span class="font-label-md text-label-md tracking-wider uppercase">Kepatuhan SLA Multi-OPD</span><span class="px-1.5 py-0.5 rounded bg-surface-container text-secondary font-label-sm text-[10px] font-bold">Data Simulasi</span></div><span class="p-1.5 rounded-lg bg-surface-container-low text-secondary material-symbols-outlined text-lg">timer</span></div>
+<div class="font-metric-display text-metric-display text-primary mb-1">
+          96.4%
+        </div>
+<div class="font-body-sm text-body-sm text-outline mb-space-sm">
+          Rata-rata tanggap 1.8 Jam
+        </div>
+</div>
+<div class="pt-space-xs bg-surface-container-low/50 -mx-space-md -mb-space-md px-space-md py-2 flex items-center justify-between text-on-surface">
+<span class="inline-flex items-center font-label-sm text-label-sm text-secondary font-bold">
+          Target Toleransi &lt; 2.0 Jam
+        </span>
+<span class="font-body-sm text-body-sm text-error font-medium">142 Out-of-SLA</span>
+</div>
+</div>
+<!-- Card 4: Pengguna Terdaftar -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="absolute top-0 left-0 right-0 h-1 bg-primary"></div>
+<div>
+<div class="flex items-center justify-between text-outline mb-space-xs"><div class="flex items-center gap-2"><span class="font-label-md text-label-md tracking-wider uppercase">Total Pengguna Terdaftar</span><span class="px-1.5 py-0.5 rounded bg-surface-container text-primary font-label-sm text-[10px] font-bold">Data Simulasi</span></div><span class="p-1.5 rounded-lg bg-surface-container-low text-primary material-symbols-outlined text-lg">group</span></div>
+<div class="font-metric-display text-metric-display text-primary mb-1">
+          52.480
+        </div>
+<div class="font-body-sm text-body-sm text-outline mb-space-sm">
+          Pengguna aktif ekosistem
+        </div>
+</div>
+<div class="pt-space-xs bg-surface-container-low/50 -mx-space-md -mb-space-md px-space-md py-2 flex items-center justify-between text-on-surface">
+<span class="font-label-sm text-label-sm text-outline">NIK: 51.2K</span>
+<span class="font-label-sm text-label-sm text-outline">Petugas: 840</span>
+<span class="font-label-sm text-label-sm text-secondary">OPD: 420</span>
+</div>
+</div>
+</div>
+<!-- SECTION: OPD PERFORMANCE TABLE & CITY RANKING -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden mb-space-lg">
+<div class="p-space-md flex flex-col md:flex-row md:items-center justify-between gap-space-sm bg-surface-container-low">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">leaderboard</span>
+          Evaluasi Kinerja &amp; Performa Organisasi Perangkat Daerah (OPD)
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Peringkat efektivitas penanganan aduan masyarakat Kota Bandar Lampung per Kuartal I 2026.
+        </p>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">
+          Diperbarui: 10 Menit yang lalu
+        </span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-primary hover:bg-surface-container font-label-md text-label-md flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-base">filter_list</span> Filter
+        </button>
+</div>
+</div>
+<!-- Responsive Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-space-md">Instansi / Dinas</th>
+<th class="py-3 px-space-md text-center">Diterima</th>
+<th class="py-3 px-space-md text-center">Diproses</th>
+<th class="py-3 px-space-md text-center">Selesai</th>
+<th class="py-3 px-space-md text-center">Kepatuhan SLA</th>
+<th class="py-3 px-space-md text-center">Durasi Tanggap</th>
+<th class="py-3 px-space-md text-center">Kepuasan Publik</th>
+<th class="py-3 px-space-md text-right">Status Kinerja</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface font-body-md text-body-md">
+<!-- Row 1: Dishub -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-base">traffic</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg text-primary">Dinas Perhubungan (Dishub BDL)</div>
+<div class="font-body-sm text-body-sm text-outline">Transportasi, Traffic Light, &amp; Terminal</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-center font-bold">1.248</td>
+<td class="py-3.5 px-space-md text-center">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">18</span>
+</td>
+<td class="py-3.5 px-space-md text-center font-bold text-secondary">1.222</td>
+<td class="py-3.5 px-space-md text-center">
+<div class="flex items-center justify-center gap-2">
+<div class="w-16 h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 98.4%"></div>
+</div>
+<span class="font-label-md text-label-md font-bold">98.4%</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-center font-label-md text-label-md">1.4 Jam</td>
+<td class="py-3.5 px-space-md text-center">
+<div class="inline-flex items-center gap-1 font-label-md text-label-md text-on-tertiary-container">
+<span class="material-symbols-outlined text-sm text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+                4.9 <span class="text-outline font-normal">/ 5.0</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">
+                Sangat Optimal
+              </span>
+</td>
+</tr>
+<!-- Row 2: Dinas PU Bina Marga -->
+<tr class="hover:bg-surface-container-low/60 transition-colors bg-surface-container-lowest">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-surface-variant flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-base">construction</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg text-primary">Dinas Pekerjaan Umum (Bina Marga)</div>
+<div class="font-body-sm text-body-sm text-outline">Jalan Berlubang, Drainase, &amp; Jembatan</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-center font-bold">3.412</td>
+<td class="py-3.5 px-space-md text-center">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">84</span>
+</td>
+<td class="py-3.5 px-space-md text-center font-bold text-secondary">3.280</td>
+<td class="py-3.5 px-space-md text-center">
+<div class="flex items-center justify-center gap-2">
+<div class="w-16 h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 95.8%"></div>
+</div>
+<span class="font-label-md text-label-md font-bold">95.8%</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-center font-label-md text-label-md">4.2 Jam</td>
+<td class="py-3.5 px-space-md text-center">
+<div class="inline-flex items-center gap-1 font-label-md text-label-md text-on-tertiary-container">
+<span class="material-symbols-outlined text-sm text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+                4.7 <span class="text-outline font-normal">/ 5.0</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm font-bold">
+                Optimal
+              </span>
+</td>
+</tr>
+<!-- Row 3: Dinas Lingkungan Hidup -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-base">recycling</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg text-primary">Dinas Lingkungan Hidup (DLH)</div>
+<div class="font-body-sm text-body-sm text-outline">Persampahan, Ruang Hijau &amp; Kebersihan</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-center font-bold">2.850</td>
+<td class="py-3.5 px-space-md text-center">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">42</span>
+</td>
+<td class="py-3.5 px-space-md text-center font-bold text-secondary">2.780</td>
+<td class="py-3.5 px-space-md text-center">
+<div class="flex items-center justify-center gap-2">
+<div class="w-16 h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 97.1%"></div>
+</div>
+<span class="font-label-md text-label-md font-bold">97.1%</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-center font-label-md text-label-md">2.1 Jam</td>
+<td class="py-3.5 px-space-md text-center">
+<div class="inline-flex items-center gap-1 font-label-md text-label-md text-on-tertiary-container">
+<span class="material-symbols-outlined text-sm text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+                4.8 <span class="text-outline font-normal">/ 5.0</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">
+                Sangat Optimal
+              </span>
+</td>
+</tr>
+<!-- Row 4: Satpol PP -->
+<tr class="hover:bg-surface-container-low/60 transition-colors bg-surface-container-lowest">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-base">policy</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg text-primary">Satuan Polisi Pamong Praja (Satpol PP)</div>
+<div class="font-body-sm text-body-sm text-outline">Ketertiban Umum, PKL &amp; Keamanan Kota</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-center font-bold">890</td>
+<td class="py-3.5 px-space-md text-center">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">12</span>
+</td>
+<td class="py-3.5 px-space-md text-center font-bold text-secondary">870</td>
+<td class="py-3.5 px-space-md text-center">
+<div class="flex items-center justify-center gap-2">
+<div class="w-16 h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 94.2%"></div>
+</div>
+<span class="font-label-md text-label-md font-bold">94.2%</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-center font-label-md text-label-md">1.9 Jam</td>
+<td class="py-3.5 px-space-md text-center">
+<div class="inline-flex items-center gap-1 font-label-md text-label-md text-on-tertiary-container">
+<span class="material-symbols-outlined text-sm text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+                4.6 <span class="text-outline font-normal">/ 5.0</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm font-bold">
+                Optimal
+              </span>
+</td>
+</tr>
+<!-- Row 5: Disperkim -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-error-container flex items-center justify-center text-on-error-container">
+<span class="material-symbols-outlined text-base">domain</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg text-primary">Dinas Perumahan &amp; Permukiman (Disperkim)</div>
+<div class="font-body-sm text-body-sm text-outline">Lampu Jalan PJU, Sanitasi, &amp; PSU</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-center font-bold">620</td>
+<td class="py-3.5 px-space-md text-center">
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm">28</span>
+</td>
+<td class="py-3.5 px-space-md text-center font-bold text-secondary">582</td>
+<td class="py-3.5 px-space-md text-center">
+<div class="flex items-center justify-center gap-2">
+<div class="w-16 h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-error" style="width: 91.5%"></div>
+</div>
+<span class="font-label-md text-label-md font-bold text-error">91.5%</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-center font-label-md text-label-md text-error">6.8 Jam</td>
+<td class="py-3.5 px-space-md text-center">
+<div class="inline-flex items-center gap-1 font-label-md text-label-md text-on-tertiary-container">
+<span class="material-symbols-outlined text-sm text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+                4.3 <span class="text-outline font-normal">/ 5.0</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">
+                Perlu Akselerasi
+              </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- 2 COLUMNS: ANALYTICS & SPATIAL DISTRIBUTION -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-lg">
+<!-- Left Column: Trend Analysis (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">
+              Tren Volume Pengaduan &amp; Rasio Penyelesaian 6 Bulan Terakhir
+            </h3>
+<p class="font-body-sm text-body-sm text-outline">
+              Perbandingan laporan masuk terhadap tingkat penyelesaian tepat waktu (Target Kota: &gt;95%)
+            </p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-outline">
+<span class="w-3 h-3 rounded-full bg-primary"></span> Masuk
+            </div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-outline">
+<span class="w-3 h-3 rounded-full bg-secondary"></span> Selesai
+            </div>
+</div>
+</div>
+<!-- Inline SVG Visualization (Under 2KB) -->
+<div class="h-64 w-full flex items-end pt-4 pb-2 px-2">
+<svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 540 220">
+<defs>
+<linearGradient id="barGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#0051d5" stop-opacity="0.9"></stop>
+<stop offset="100%" stop-color="#0051d5" stop-opacity="0.2"></stop>
+</linearGradient>
+</defs>
+<!-- Horizontal Gridlines -->
+<line stroke="#dce9ff" stroke-dasharray="4" stroke-width="1" x1="0" x2="540" y1="20" y2="20"></line>
+<line stroke="#dce9ff" stroke-dasharray="4" stroke-width="1" x1="0" x2="540" y1="70" y2="70"></line>
+<line stroke="#dce9ff" stroke-dasharray="4" stroke-width="1" x1="0" x2="540" y1="120" y2="120"></line>
+<line stroke="#dce9ff" stroke-dasharray="4" stroke-width="1" x1="0" x2="540" y1="170" y2="170"></line>
+<line stroke="#cbd5e1" stroke-width="1.5" x1="0" x2="540" y1="200" y2="200"></line>
+<!-- Target 95% threshold line -->
+<line stroke="#ba1a1a" stroke-dasharray="5 3" stroke-width="1.5" x1="0" x2="540" y1="35" y2="35"></line>
+<text fill="#ba1a1a" font-family="Inter" font-size="10" font-weight="700" x="440" y="30">Target Resolusi 95%</text>
+<!-- Month 1: Nov 2025 -->
+<rect fill="#00142f" height="135" rx="3" width="22" x="25" y="65"></rect>
+<rect fill="url(#barGrad)" height="125" rx="3" width="22" x="52" y="75"></rect>
+<!-- Month 2: Des 2025 -->
+<rect fill="#00142f" height="155" rx="3" width="22" x="115" y="45"></rect>
+<rect fill="url(#barGrad)" height="148" rx="3" width="22" x="142" y="52"></rect>
+<!-- Month 3: Jan 2026 -->
+<rect fill="#00142f" height="170" rx="3" width="22" x="205" y="30"></rect>
+<rect fill="url(#barGrad)" height="162" rx="3" width="22" x="232" y="38"></rect>
+<!-- Month 4: Feb 2026 -->
+<rect fill="#00142f" height="150" rx="3" width="22" x="295" y="50"></rect>
+<rect fill="url(#barGrad)" height="142" rx="3" width="22" x="322" y="58"></rect>
+<!-- Month 5: Mar 2026 -->
+<rect fill="#00142f" height="165" rx="3" width="22" x="385" y="35"></rect>
+<rect fill="url(#barGrad)" height="160" rx="3" width="22" x="412" y="40"></rect>
+<!-- Month 6: Apr 2026 (Live) -->
+<rect fill="#00142f" height="175" rx="3" width="22" x="475" y="25"></rect>
+<rect fill="url(#barGrad)" height="170" rx="3" width="22" x="502" y="30"></rect>
+</svg>
+</div>
+<div class="flex justify-between px-6 pt-2 font-label-sm text-label-sm text-outline">
+<span>Nov 2025</span>
+<span>Des 2025</span>
+<span>Jan 2026</span>
+<span>Feb 2026</span>
+<span>Mar 2026</span>
+<span class="text-primary font-bold">Apr 2026 (Berjalan)</span>
+</div>
+</div>
+<div class="mt-space-md p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-lg">insights</span>
+<span class="font-body-sm text-body-sm text-on-surface">Peningkatan resolusi sebesar <strong>+3.2%</strong> didorong oleh implementasi auto-triage AI Diskominfotik &amp; UTI.</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase cursor-pointer hover:underline">Detail Tren</span>
+</div>
+</div>
+<!-- Right Column: District Leaderboard (5 cols) -->
+<div class="lg:col-span-5 bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Sebaran 20 Kecamatan Terpadat <span class="text-xs font-normal text-outline">(Data Simulasi Prototipe)</span></h3>
+<p class="font-body-sm text-body-sm text-outline">
+              Frekuensi pelaporan publik &amp; rasio penyelesaian per teritori.
+            </p>
+</div>
+<span class="material-symbols-outlined text-outline">pin_drop</span>
+</div>
+<!-- Kecamatan List -->
+<div class="space-y-space-sm">
+<!-- Item 1: Kedaton -->
+<div class="p-space-xs rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-lg text-label-lg text-primary">1. Kec. Kedaton</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">1.840 Aduan <span class="text-secondary font-normal">(98% Selesai)</span></span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 98%"></div>
+</div>
+</div>
+<!-- Item 2: Sukarame -->
+<div class="p-space-xs rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-lg text-label-lg text-primary">2. Kec. Sukarame</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">1.420 Aduan <span class="text-secondary font-normal">(96% Selesai)</span></span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 96%"></div>
+</div>
+</div>
+<!-- Item 3: Tanjung Karang Pusat -->
+<div class="p-space-xs rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-lg text-label-lg text-primary">3. Kec. Tanjung Karang Pusat</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">1.210 Aduan <span class="text-secondary font-normal">(97% Selesai)</span></span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 97%"></div>
+</div>
+</div>
+<!-- Item 4: Rajabasa -->
+<div class="p-space-xs rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-lg text-label-lg text-primary">4. Kec. Rajabasa</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">1.150 Aduan <span class="text-secondary font-normal">(95% Selesai)</span></span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 95%"></div>
+</div>
+</div>
+<!-- Item 5: Teluk Betung Selatan -->
+<div class="p-space-xs rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-lg text-label-lg text-primary">5. Kec. Teluk Betung Selatan</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">980 Aduan <span class="text-secondary font-normal">(92% Selesai)</span></span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container" style="width: 92%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-outline">Menampilkan 5 dari 20 total kecamatan</span>
+<a class="font-label-sm text-label-sm text-secondary font-bold hover:underline flex items-center gap-1" href="#">
+          Buka Peta Spasial Geografis <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- SECURITY & SYSTEM AUDIT LIVE LOG PANEL -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-lg">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm bg-surface-container-low -mx-space-md -mt-space-md p-space-md rounded-t-xl">
+<div class="flex items-center gap-space-xs">
+<span class="p-1.5 rounded-lg bg-surface-container text-primary material-symbols-outlined">security</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">
+            Ringkasan Aktivitas Keamanan &amp; Audit Log Sistem Terkini
+          </h3>
+<p class="font-body-sm text-body-sm text-outline">Simulasi Alur Triage &amp; Verifikasi Aduan (Kajian Akademik) — Pencatatan audit trail SIAP v4.2.</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-lowest text-on-surface font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+          Streaming Aktif
+        </span>
+<button class="px-2.5 py-1 rounded bg-surface-container-high text-primary font-label-sm text-label-sm hover:bg-surface-container-highest transition-colors">
+          Clear Buffer
+        </button>
+</div>
+</div>
+<!-- Live Log Items -->
+<div class="space-y-space-xs font-body-sm text-body-sm">
+<!-- Log 1 -->
+<div class="flex items-start gap-space-sm p-space-xs rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="mt-0.5">
+<span class="material-symbols-outlined text-secondary text-base">task_alt</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="text-on-surface">
+<strong>Admin Dishub Ir. Hendra</strong> menyelesaikan disposisi tiket aduan 
+            <span class="px-1.5 py-0.5 rounded bg-surface-container text-primary font-mono text-label-sm">#BL-2026-4402</span> 
+            (Perbaikan Traffic Light Simpang Way Halim).
+          </div>
+<div class="font-label-sm text-label-sm text-outline mt-0.5">
+            Hash: <span class="font-mono">e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</span> • IP: 10.20.14.88
+          </div>
+</div>
+<span class="font-label-sm text-label-sm text-outline whitespace-nowrap">2 menit lalu</span>
+</div>
+<!-- Log 2 -->
+<div class="flex items-start gap-space-sm p-space-xs rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="mt-0.5">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-base">tune</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="text-on-surface">
+<strong>Super Admin (Dr. H. Ahmad Fauzi, M.T.)</strong> mengubah parameter konfigurasi: 
+            <span class="font-semibold text-primary">Threshold SLA Kritis menjadi 15 menit</span> 
+            untuk kategori Kebencanaan &amp; Pohon Tumbang.
+          </div>
+<div class="font-label-sm text-label-sm text-outline mt-0.5">
+            Role: Super Admin Pemkot • Modul: SLA Config Engine
+          </div>
+</div>
+<span class="font-label-sm text-label-sm text-outline whitespace-nowrap">14 menit lalu</span>
+</div>
+<!-- Log 3 -->
+<div class="flex items-start gap-space-sm p-space-xs rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="mt-0.5">
+<span class="material-symbols-outlined text-error text-base">smart_toy</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="text-on-surface"><strong>Simulasi Model AI Teknokrat</strong> menguji deteksi <span class="px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-semibold">4 laporan spam</span> duplikasi di wilayah Kec. Enggal (<span class="font-medium text-error">Simulasi Triage &amp; Klasifikasi Otomatis</span>).</div>
+<div class="font-label-sm text-label-sm text-outline mt-0.5">
+            AI Engine: NLP Spam Guard v2.4 (Teknokrat AI Research Lab)
+          </div>
+</div>
+<span class="font-label-sm text-label-sm text-outline whitespace-nowrap">32 menit lalu</span>
+</div>
+</div>
+</div>
+<!-- INSTITUTIONAL FOOTER SECTION -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-md">
+<div class="flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<img alt="Lambang Kota Bandar Lampung" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxQI287hFHGhushfZEVHcRUAKNpQgW-8ZmPcKEA5-er1Rfk0XP7R02CijfOkz8oBFMeZt7dzV2shQv_KUNfM8qr7z4KuLMhbK4UEKcNkBF5FxIInnV5gfqe0xMF4z_WedUw3qJFQ3WZxqfH0YoIfn8IjPSw3a8Ks5PibMpeuGDuoPMfNgsnxHhKr4ZVrNq2BLwkis7WW2tkrM8-Pm4QDkekS1RTMO5qopadU1VISMN6F_CJ2FwRd5p">
+<img alt="Logo Universitas Teknokrat Indonesia" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDursGCKZxGeMS_eTLlhHA4N8jEYEbb4-qLAYwOW4dBkRZJtkh0sU1Q6aW98MrCF3GcPwdwyFvGw1qHDrNu22mvnbUUG0bzZ89vIc0rZXmh3pJ5I7r9hh87tsMEc8PfvEr1XnuhyYOOxYyKRfUgSIss6cQ__2BSz1de-A6n17UDdw0rOtBwaJlqejK-h8dc9Agl2p2PeksihE__fC5PDT8QAB4iCD3GAg1EhuOhuurih5BuQW5cG2md">
+<div class="flex flex-col">
+<div class="font-headline-sm text-headline-sm text-primary tracking-tight">
+            LAMPUNG REPORT — SMART CITIZEN PORTAL
+          </div>
+<div class="font-body-sm text-body-sm text-outline">
+            Sistem Informasi Pengaduan &amp; Triage Pelayanan Publik Terpadu
+          </div>
+</div>
+</div>
+<div class="text-center md:text-right font-body-sm text-body-sm text-on-surface-variant">
+<div class="font-semibold text-primary">
+          Copyright©2026 by Ridho Fatahilah Joeda and Dr. Erliyan Redy Susanto, M.Kom
+        </div>
+<div class="text-secondary mt-0.5">
+          Kolaborasi Riset Strategis: Pemerintah Kota Bandar Lampung &amp; Universitas Teknokrat Indonesia
+        </div>
+</div>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-low py-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] mt-auto"><div class="w-full px-space-lg flex flex-col md:flex-row items-center justify-between gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><div>Copyright©2026 by Ridho Fatahilah Joeda and Dr. Erliyan Redy Susanto, M.Kom</div><div>Kolaborasi Riset Strategis: Pemerintah Kota Bandar Lampung &amp; Universitas Teknokrat Indonesia</div></div></footer></div>
+
+</body></html>

@@ -1,0 +1,12 @@
+/target
+**/*.rs.bk
+Cargo.lock
+
+# Environment
+.env
+.env*.local
+
+# Uploads directory
+/uploads/*
+!/uploads/.gitkeep
+

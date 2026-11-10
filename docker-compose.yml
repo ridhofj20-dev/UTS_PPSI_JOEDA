@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: lampung-report-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: lampung_report
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./backend/migrations/20261110000001_create_schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+      - ./backend/migrations/20261110000002_seed_initial_data.sql:/docker-entrypoint-initdb.d/02_seed.sql:ro
+
+volumes:
+  pgdata:
+    driver: local
+

@@ -1,0 +1,524 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-variant": "#d3e4fe", "primary": "#00142f", "surface-dim": "#cbdbf5", "on-tertiary-fixed-variant": "#614000", "secondary-fixed": "#dbe1ff", "on-background": "#0b1c30", "surface-container-lowest": "#ffffff", "surface-container-high": "#dce9ff", "surface-container-highest": "#d3e4fe", "tertiary-container": "#392400", "surface-container-low": "#eff4ff", "outline-variant": "#c4c6cf", "secondary-fixed-dim": "#b4c5ff", "inverse-on-surface": "#eaf1ff", "on-primary": "#ffffff", "tertiary": "#1f1100", "on-surface-variant": "#44474e", "on-tertiary": "#ffffff", "on-tertiary-container": "#c18300", "surface-bright": "#f8f9ff", "on-error": "#ffffff", "inverse-primary": "#b0c8f1", "surface-container": "#e5eeff", "error-container": "#ffdad6", "secondary-container": "#316bf3", "tertiary-fixed-dim": "#ffba46", "outline": "#74777f", "surface": "#f8f9ff", "on-error-container": "#93000a", "on-primary-fixed": "#001b3b", "on-secondary": "#ffffff", "on-tertiary-fixed": "#281800", "on-primary-fixed-variant": "#30476a", "secondary": "#0051d5", "on-secondary-fixed-variant": "#003ea8", "on-primary-container": "#7a91b7", "primary-fixed-dim": "#b0c8f1", "on-secondary-fixed": "#00174b", "inverse-surface": "#213145", "error": "#ba1a1a", "on-surface": "#0b1c30", "on-secondary-container": "#fefcff", "tertiary-fixed": "#ffddb0", "primary-container": "#0f294a", "background": "#f8f9ff", "surface-tint": "#485f83", "primary-fixed": "#d5e3ff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "space-xl": "2rem", "space-md": "1rem", "gutter-mobile": "1rem", "space-2xl": "3rem", "gutter": "1.5rem", "margin-mobile": "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "margin": "2rem" }, "fontFamily": { "metric-display": [ "Plus Jakarta Sans" ], "headline-lg-mobile": [ "Plus Jakarta Sans" ], "headline-md": [ "Plus Jakarta Sans" ], "headline-xl-mobile": [ "Plus Jakarta Sans" ], "body-sm": [ "Inter" ], "label-md": [ "Inter" ], "body-lg": [ "Inter" ], "label-sm": [ "Inter" ], "headline-sm": [ "Plus Jakarta Sans" ], "headline-lg": [ "Plus Jakarta Sans" ], "headline-xl": [ "Plus Jakarta Sans" ], "body-md": [ "Inter" ], "label-lg": [ "Inter" ] }, "fontSize": { "metric-display": [ "32px", { "lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "800" } ], "headline-lg-mobile": [ "22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "headline-md": [ "22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-xl-mobile": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "body-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" } ], "body-lg": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" } ], "headline-sm": [ "18px", { "lineHeight": "24px", "fontWeight": "600" } ], "headline-lg": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-xl": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "body-md": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "label-lg": [ "14px", { "lineHeight": "20px", "fontWeight": "600" } ] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-72 bg-primary-container text-on-primary z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)] overflow-y-auto"><div class="flex flex-col"><div class="p-space-lg bg-primary flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-secondary flex items-center justify-center text-on-secondary shadow-md"><span class="material-symbols-outlined text-xl">minor_crash</span></div><div><div class="font-headline-sm text-headline-sm text-on-primary tracking-tight leading-tight">SATGAS LAPANGAN</div><div class="font-label-sm text-label-sm text-tertiary-fixed-dim uppercase tracking-wider">KOTA BANDAR LAMPUNG</div></div></div><span class="flex h-2.5 w-2.5 relative"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-fixed opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary-fixed"></span></span></div><div class="p-space-md"><button class="w-full flex items-center justify-between px-space-md py-space-sm bg-secondary hover:bg-primary transition-colors text-on-secondary rounded-lg font-label-lg text-label-lg shadow-sm"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-lg text-tertiary-fixed-dim">published_with_changes</span><span>Update Status Regu</span></div><span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-primary text-secondary-fixed">Siaga</span></button></div><nav class="flex flex-col gap-1 px-space-md mt-space-xs" data-active-classes="bg-secondary-container text-on-secondary-container font-label-lg rounded-lg shadow-sm"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2.5 transition-all bg-secondary-container text-on-secondary-container font-label-lg rounded-lg shadow-sm" data-path="dashboard-tugas" href="#"><span class="material-symbols-outlined text-lg">dashboard</span><span>Dashboard Tugas</span></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-surface-variant hover:bg-primary hover:text-on-primary transition-all font-body-md text-body-md" data-path="tugas-saya" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">inbox</span><span>Tugas Saya (Antrean Baru)</span></div><span class="font-label-sm text-label-sm bg-error text-on-error rounded-full px-2 py-0.5">4</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-surface-variant hover:bg-primary hover:text-on-primary transition-all font-body-md text-body-md" data-path="tugas-berjalan" href="#"><span class="material-symbols-outlined text-lg">engineering</span><span>Tugas Berjalan</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-surface-variant hover:bg-primary hover:text-on-primary transition-all font-body-md text-body-md" data-path="riwayat-pekerjaan" href="#"><span class="material-symbols-outlined text-lg">fact_check</span><span>Riwayat Pekerjaan</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-surface-variant hover:bg-primary hover:text-on-primary transition-all font-body-md text-body-md" data-path="peta-operasional" href="#"><span class="material-symbols-outlined text-lg">map</span><span>Peta Operasional &amp; Rute</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-surface-variant hover:bg-primary hover:text-on-primary transition-all font-body-md text-body-md" data-path="notifikasi-disposisi" href="#"><span class="material-symbols-outlined text-lg">notifications_active</span><span>Notifikasi Disposisi</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-surface-variant hover:bg-primary hover:text-on-primary transition-all font-body-md text-body-md" data-path="profil-armada" href="#"><span class="material-symbols-outlined text-lg">local_shipping</span><span>Profil &amp; Armada Regu</span></a><div class="my-space-xs border-t border-primary/40"></div><a class="flex items-center gap-space-sm px-space-md py-2 rounded-lg text-error-container hover:bg-primary hover:text-on-primary transition-all font-label-md text-label-md" data-path="bantuan-darurat-112" href="#"><span class="material-symbols-outlined text-lg text-error">emergency</span><span>Bantuan Darurat 112</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded-lg text-surface-variant hover:bg-primary hover:text-on-primary transition-all font-label-md text-label-md" data-path="keluar-sistem" href="#"><span class="material-symbols-outlined text-lg">logout</span><span>Keluar Sistem</span></a></nav></div><div class="p-space-md"><div class="p-space-md rounded-xl bg-primary shadow-inner"><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm text-label-sm text-tertiary-fixed-dim font-bold flex items-center gap-1"><span class="material-symbols-outlined text-xs">fmd_good</span> GPS AKTIF</span><span class="flex h-2 w-2 relative"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-fixed opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-secondary-fixed"></span></span></div><div class="font-headline-sm text-headline-sm text-on-primary leading-snug">Armada Unit 04</div><div class="font-body-sm text-body-sm text-on-primary-container mt-0.5">Mobil Tangga Hidrolik 04 - BDL</div><div class="mt-space-sm pt-space-xs border-t border-primary-container flex items-center justify-between text-on-primary-container font-label-sm text-label-sm"><span>Status: Siaga Reaksi</span><span class="text-tertiary-fixed-dim">Pos Dishub</span></div></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-20 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm bg-surface-container-lowest px-space-md py-1.5 rounded-lg shadow-sm"><img alt="Pemerintah Kota Bandar Lampung" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxQI287hFHGhushfZEVHcRUAKNpQgW-8ZmPcKEA5-er1Rfk0XP7R02CijfOkz8oBFMeZt7dzV2shQv_KUNfM8qr7z4KuLMhbK4UEKcNkBF5FxIInnV5gfqe0xMF4z_WedUw3qJFQ3WZxqfH0YoIfn8IjPSw3a8Ks5PibMpeuGDuoPMfNgsnxHhKr4ZVrNq2BLwkis7WW2tkrM8-Pm4QDkekS1RTMO5qopadU1VISMN6F_CJ2FwRd5p"><div class="h-6 w-px bg-outline-variant"></div><img alt="Universitas Teknokrat Indonesia" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDursGCKZxGeMS_eTLlhHA4N8jEYEbb4-qLAYwOW4dBkRZJtkh0sU1Q6aW98MrCF3GcPwdwyFvGw1qHDrNu22mvnbUUG0bzZ89vIc0rZXmh3pJ5I7r9hh87tsMEc8PfvEr1XnuhyYOOxYyKRfUgSIss6cQ__2BSz1de-A6n17UDdw0rOtBwaJlqejK-h8dc9Agl2p2PeksihE__fC5PDT8QAB4iCD3GAg1EhuOhuurih5BuQW5cG2md"></div><div><div class="font-headline-sm text-headline-sm text-primary leading-tight tracking-tight">LAMPUNG REPORT <span class="text-secondary font-headline-sm text-headline-sm">• Portal Satgas Lapangan</span></div><div class="font-label-sm text-label-sm text-on-surface-variant font-medium">Dinas Terkait Pemkot Bandar Lampung</div></div></div><div class="hidden xl:flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container-high"><span class="flex h-2 w-2 rounded-full bg-secondary"></span><span class="font-label-md text-label-md text-on-surface">Siaga Aktif Lapangan (Regu Reaksi Cepat)</span></div></div><div class="flex items-center gap-space-md"><div class="relative hidden lg:block w-72"><span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-lg">search</span><input class="w-full pl-9 pr-space-md py-2 text-body-sm font-body-sm bg-surface-container-lowest text-on-surface rounded-lg placeholder-outline shadow-sm focus:outline-none focus:ring-1 focus:ring-secondary" placeholder="Cari tiket / lokasi / NIK..." type="text"></div><button class="relative p-2 rounded-full bg-surface-container-low hover:bg-surface-container-high transition-colors text-on-surface" title="Notifikasi Tugas"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute -top-1 -right-1 font-label-sm text-label-sm bg-error text-on-error w-5 h-5 rounded-full flex items-center justify-center shadow">4</span></button><div class="flex items-center gap-space-sm pl-space-sm border-l border-surface-container-high"><div class="text-right hidden sm:block"><div class="font-label-lg text-label-lg text-on-surface leading-tight">Hendra Setiawan</div><div class="font-body-sm text-body-sm text-on-surface-variant">ID: STG-BDL-04 • Dishub Kedaton</div></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/ALJJyrCmvQuoEO00OV6sAX9U7qSWhwSiM1Sgqv0xSkxjPZoIiww5K9Py1Y2r4eE0TNRgQJPMeplGG-ROXfnPLNR53aFzgvQeDOSF3a7HPO12N8FwKczaJ0gGy4m28PU8eJC2jxvuzTDmWiAb-3zF5YpbLjGuMEiNy2RMPUNocNllpnqV55gvwQFl3hd6uY9Rma6s6jSNty4eSQt6yy7ghBnW6bzDvfnACA3ImyNG7pJMmpz7bLsXErNRbrem3w"></div></div></header><main class="w-full pt-20 px-space-lg pb-space-xl flex-grow bg-surface"><div class="flex flex-col w-full">
+<!-- Banner Sapaan & Status Operasional Regu -->
+<section class="relative overflow-hidden rounded-xl bg-primary text-on-primary p-space-lg shadow-md mb-space-lg">
+<div class="absolute -right-12 -top-12 w-64 h-64 rounded-full bg-secondary/15 blur-3xl pointer-events-none"></div>
+<div class="absolute right-1/3 -bottom-16 w-80 h-80 rounded-full bg-tertiary-fixed-dim/10 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-2">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase tracking-wider font-bold">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"></span>
+            Siaga Aktif Lapangan
+          </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-highest/20 text-surface-variant font-label-sm text-label-sm">
+            ID: STG-BDL-04 • Wilayah Kedaton
+          </span>
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed-dim/20 text-tertiary-fixed font-label-sm text-label-sm font-semibold">Simulasi Alur Navigasi &amp; Geotagging Presisi (Kajian Akademik)</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-primary tracking-tight">
+          Selamat Bertugas, Hendra Setiawan!
+        </h1>
+<p class="font-body-md text-body-md text-surface-variant max-w-3xl">
+          Satgas Operasional Dinas Perhubungan Kota Bandar Lampung • Unit Wilayah Kedaton. Siap menerima instruksi penanganan infrastruktur publik warga secara real-time.
+        </p>
+<!-- Status Bar Regu -->
+<div class="mt-space-xs flex flex-wrap items-center gap-y-2 gap-x-4 p-space-sm rounded-lg bg-primary-container text-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-1.5 text-on-primary">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-lg">directions_car</span>
+<span class="font-bold text-on-primary">REGU 2 - MOBIL HIDROLIK 04</span>
+</div>
+<span class="text-surface-variant/40">•</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-lg">schedule</span>
+<span>SHIFT PAGI (07.00 - 15.00 WIB)</span>
+</div>
+<span class="text-surface-variant/40">•</span>
+<div class="flex items-center gap-1.5 text-emerald-300">
+<span class="material-symbols-outlined text-lg">verified</span>
+<span class="font-semibold text-secondary-fixed">KESIAPAN ARMADA: 100%</span>
+</div>
+<span class="text-surface-variant/40">•</span>
+<div class="flex items-center gap-1.5 text-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-sm">wifi_tethering</span>
+<span>VHF CH-04 KEDATON</span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-wrap sm:flex-nowrap items-center gap-space-sm shrink-0">
+<button class="flex items-center justify-center gap-2 px-space-md py-2.5 rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg hover:bg-secondary-container transition-all shadow-sm active:scale-95" id="btn-update-gps">
+<span class="material-symbols-outlined text-lg">my_location</span>
+<span>Update Lokasi GPS</span>
+</button>
+<button class="flex items-center justify-center gap-2 px-space-md py-2.5 rounded-lg bg-surface-container-high text-on-surface font-label-lg text-label-lg hover:bg-surface-container-highest transition-all shadow-sm active:scale-95" id="btn-lapor-kendala">
+<span class="material-symbols-outlined text-lg text-error">report_problem</span>
+<span>Lapor Kendala</span>
+</button>
+<button class="flex items-center justify-center gap-2 px-space-md py-2.5 rounded-lg bg-primary-container text-tertiary-fixed font-label-lg text-label-lg hover:bg-surface-container-highest/20 transition-all shadow-sm active:scale-95" id="btn-radio-dispatcher">
+<span class="material-symbols-outlined text-lg">podcasts</span>
+<span>Radio Dispatcher</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Section 2: 4 Kartu Ringkasan Metrik & SLA -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-lg">
+<!-- Stat 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between"><div class="flex items-center gap-2"><span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Tugas Baru Masuk</span><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-container-high text-on-surface-variant">Data Simulasi</span></div><div class="w-9 h-9 rounded-lg bg-error-container text-error flex items-center justify-center"><span class="material-symbols-outlined text-xl">mark_email_unread</span></div></div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-metric-display text-metric-display text-primary">4</span>
+<span class="font-label-md text-label-md text-error font-semibold">Laporan</span>
+</div>
+</div>
+<div class="mt-4 pt-3 bg-surface-container-low -mx-space-md -mb-space-md px-space-md py-2.5 rounded-b-xl flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Respon Rata-rata</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-error text-on-error font-bold">&lt; 15 Menit</span>
+</div>
+</div>
+<!-- Stat 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between"><div class="flex items-center gap-2"><span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Tugas Berjalan</span><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-container-high text-on-surface-variant">Data Simulasi</span></div><div class="w-9 h-9 rounded-lg bg-secondary-fixed text-secondary flex items-center justify-center"><span class="material-symbols-outlined text-xl">construction</span></div></div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-metric-display text-metric-display text-secondary">2</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Titik Lapangan</span>
+</div>
+</div>
+<div class="mt-4 pt-3 bg-surface-container-low -mx-space-md -mb-space-md px-space-md py-2.5 rounded-b-xl flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Jl. ZA Pagar Alam &amp; T. Umar</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold shrink-0">Aktif</span>
+</div>
+</div>
+<!-- Stat 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between"><div class="flex items-center gap-2"><span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Tuntas Hari Ini</span><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-container-high text-on-surface-variant">Data Simulasi</span></div><div class="w-9 h-9 rounded-lg bg-surface-container-high text-primary flex items-center justify-center"><span class="material-symbols-outlined text-xl">task_alt</span></div></div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-metric-display text-metric-display text-primary">7</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Pekerjaan</span>
+</div>
+</div>
+<div class="mt-4 pt-3 bg-surface-container-low -mx-space-md -mb-space-md px-space-md py-2.5 rounded-b-xl flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Target Kepatuhan SLA</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-highest text-primary font-bold">100% Sesuai</span>
+</div>
+</div>
+<!-- Stat 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between"><div class="flex items-center gap-2"><span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Rating &amp; Efisiensi</span><span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-container-high text-on-surface-variant">Data Simulasi</span></div><div class="w-9 h-9 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center"><span class="material-symbols-outlined text-xl">star</span></div></div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="font-metric-display text-metric-display text-primary">4.9</span>
+<span class="font-label-md text-label-md text-on-surface-variant">/ 5.0 Warga</span>
+</div>
+</div>
+<div class="mt-4 pt-3 bg-surface-container-low -mx-space-md -mb-space-md px-space-md py-2.5 rounded-b-xl flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Efisiensi Rute Regu</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">94% Optimal</span>
+</div>
+</div>
+</section>
+<!-- Section 3: Peta Operasional Satgas & Rute AI (GIS Widget) -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden mb-space-lg">
+<div class="p-space-md flex flex-col lg:flex-row lg:items-center justify-between gap-space-sm bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-secondary text-on-secondary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-lg">explore</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Peta Spasial Lapangan &amp; Navigasi Armada <span class="ml-2 inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold bg-surface-container-high text-secondary">(Prototipe Antarmuka - Rencana Integrasi Leaflet / GIS)</span></h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Area Operasional: Kedaton, Rajabasa, Sukarame &amp; Way Halim Kota Bandar Lampung</p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-error animate-ping"></span>
+          1 Darurat (Depan Teknokrat)
+        </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+          2 Dalam Proses
+        </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim"></span>
+          3 Antrean Menunggu
+        </span>
+<button class="px-3 py-1 bg-primary text-on-primary rounded-lg font-label-sm text-label-sm hover:bg-primary-container transition-all flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">tune</span>
+          Filter Layer
+        </button>
+</div>
+</div>
+<!-- GIS Map Container with Overlay Cards -->
+<div class="relative w-full h-[440px]">
+<div class="w-full h-full bg-cover bg-center" data-location="Kedaton, Bandar Lampung" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDLS-CxvfDrU3gLHsbVSJwU4uLb5OqgMM8SYQ2cDR7-aVxTXuJUqpJMAVAt0A_iWqgHk8bcc1xrU-XX1RvZYsoBJI7wJeMdzcBPRd2nBKUikAJKAvhHkvRT7bMEKgaMZXK_7-ZuciZCQQN2jRsnmvD8EZuRWG_oJA6gMeG7IOVullWrBVV73OlvEidh3hNmMQHPBloI72pkzc1JxZ_HkxhbKAGLTNwLC_YBECyDYiA')"></div>
+<!-- Map Ambient Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent pointer-events-none"></div>
+<!-- AI Routing Badge Overlay -->
+<div class="absolute top-4 left-4 max-w-sm bg-surface-container-lowest/95 backdrop-blur-md p-space-sm rounded-xl shadow-lg flex items-start gap-3">
+<div class="p-2 rounded-lg bg-secondary text-on-secondary shrink-0">
+<span class="material-symbols-outlined text-lg">alt_route</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm bg-secondary-fixed text-secondary px-1.5 py-0.5 rounded font-bold">Rute AI Tercepat</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">8 Menit (2.4 km)</span>
+</div>
+<span class="font-label-lg text-label-lg text-primary mt-0.5">Ke Lokasi: GSG Kampus Teknokrat</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Hindari kepadatan Simpang Flyover Mall Boemi Kedaton</span>
+</div>
+</div>
+<!-- Interactive Map Pin 1: Kritis (Kampus Teknokrat) -->
+<div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 group cursor-pointer">
+<div class="relative flex items-center justify-center">
+<span class="animate-ping absolute inline-flex h-10 w-10 rounded-full bg-error opacity-75"></span>
+<div class="relative w-9 h-9 rounded-full bg-error text-on-error flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-lg font-bold">priority_high</span>
+</div>
+</div>
+<!-- Tooltip -->
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-space-sm rounded-lg bg-primary text-on-primary text-center shadow-xl opacity-90 group-hover:opacity-100 transition-opacity pointer-events-none z-30">
+<div class="font-label-sm text-label-sm text-tertiary-fixed-dim uppercase tracking-wider font-bold">#BL-2026-4402 • Darurat</div>
+<div class="font-label-md text-label-md leading-tight text-white mt-0.5">PJU Padam Depan Kampus Teknokrat</div>
+<div class="font-body-sm text-body-sm text-surface-variant mt-1">Sisa SLA: 1 Jam 45 Menit</div>
+</div>
+</div>
+<!-- Interactive Map Pin 2: Dalam Pengerjaan (Jl. Soekarno Hatta) -->
+<div class="absolute top-2/3 right-1/4 group cursor-pointer">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-sm">build</span>
+</div>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 p-2 rounded bg-primary text-on-primary text-xs shadow-lg z-30">
+          Perbaikan Rambu Roboh Soekarno Hatta
+        </div>
+</div>
+<!-- Interactive Map Pin 3: Antrean Baru (Untung Suropati) -->
+<div class="absolute top-1/4 right-1/3 group cursor-pointer">
+<div class="w-7 h-7 rounded-full bg-tertiary-fixed text-tertiary-container flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-sm">nature_people</span>
+</div>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 p-2 rounded bg-primary text-on-primary text-xs shadow-lg z-30">
+          Ranting Pohon Halangi PJU Untung Suropati
+        </div>
+</div>
+<!-- Map Footer Bar: Current Coordinates & Target Status -->
+<div class="absolute bottom-3 left-4 right-4 bg-primary/90 backdrop-blur-md rounded-lg p-space-sm text-on-primary flex flex-col md:flex-row items-center justify-between gap-2 shadow-lg">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed text-lg">radar</span>
+<span class="font-body-sm text-body-sm text-surface-variant">Posisi Regu: <strong class="text-on-primary font-label-md text-label-md">-5.383120, 105.259830 (Pos Pantau Dishub Sultan Agung)</strong></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-tertiary-fixed-dim">Target Prioritas: GSG Teknokrat (0.9 km)</span>
+<a class="px-3 py-1 rounded bg-secondary text-on-secondary font-label-sm text-label-sm hover:bg-secondary-container transition-all flex items-center gap-1" href="#">
+<span>Buka Google Maps</span>
+<span class="material-symbols-outlined text-xs">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4 & 5: Daftar Prioritas Penanganan Tugas & SOP Operasional Lapangan (Split Layout) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-lg">
+<!-- Col Left: List Tugas (8 Cols) -->
+<section class="lg:col-span-8 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary tracking-tight">Daftar Penugasan Lapangan Hari Ini</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Kelola tanggapan respon cepat insiden pelayanan masyarakat</p>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-high p-1 rounded-lg">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest font-label-sm text-label-sm text-primary shadow-sm font-bold">Semua (6)</button>
+<button class="px-3 py-1.5 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors">Darurat (1)</button>
+<button class="px-3 py-1.5 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors">Berjalan (2)</button>
+<button class="px-3 py-1.5 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors">Baru (3)</button>
+</div>
+</div>
+<!-- Tiket 1: Darurat / Kritis (Hero Task) -->
+<article class="mt-space-md p-space-md rounded-xl bg-surface-container-low shadow-sm transition-all hover:shadow-md">
+<div class="flex flex-wrap items-center justify-between gap-2 pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-error text-on-error uppercase font-extrabold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">warning</span>
+                Prioritas Tinggi / Darurat
+              </span>
+<span class="font-label-md text-label-md font-bold text-primary">#BL-2026-4402</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">• Dishub / Penerangan Jalan</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-xs">timer</span>
+<span>SLA Kritis: Sisa 1 Jam 45 Menit</span>
+</div>
+</div>
+<div class="mt-2 flex flex-col md:flex-row gap-space-md">
+<div class="md:w-44 h-32 rounded-lg overflow-hidden shrink-0 shadow-sm relative">
+<img class="w-full h-full object-cover" data-alt="Teknisi Dishub memeriksa tiang lampu jalan penerangan umum PJU yang konslet padam kabel menggantung di depan gerbang kampus Universitas Teknokrat Indonesia Bandar Lampung saat pagi hari dengan mobil tangga hidrolik." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAxclem3eUgSg52cMzdYWhlJWq8VJZ0B1jTXW91DwIhW5IgcMLE4PJpvB3aLign9P9KZxOAJxycAemnuHdttw-6uJPMvMNgtsRmNtMIWBGdFvlq1OZNThjOwqFCpe-SjSJJrBGhP4bcmrxhKKOpzIvSlL6YtGuYELdnd7oUuR4-ZHFvf0GNyq0po6krpcNzUCLS9B3M6fwZoh-EcQysYQbMAjle6DfxJWmO0iy2h4">
+<div class="absolute bottom-1 right-1 bg-primary/80 backdrop-blur text-white text-[10px] px-1.5 py-0.5 rounded font-mono">Geotag Aktif</div>
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary leading-snug">
+                  Lampu Penerangan Jalan Umum (PJU) Padam di Depan Kampus Teknokrat Jl. ZA Pagar Alam
+                </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Konsleting panel MCB tiang lampu trotoar, memicu kegelapan di area penyeberangan mahasiswa dan warga sekitar GSG Teknokrat.
+                </p>
+</div>
+<!-- Metadata Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-y-1 gap-x-4 mt-3 py-2 px-3 rounded-lg bg-surface-container-lowest">
+<div class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-sm">person_check</span>
+<span>Pelapor: <strong>Ahmad S. Pratama</strong> (NIK Terverifikasi)</span>
+</div>
+<div class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-sm">call</span>
+<span>Kontak: <strong>0812-7890-****</strong></span>
+</div>
+<div class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface sm:col-span-2">
+<span class="material-symbols-outlined text-secondary text-sm">pin_drop</span>
+<span class="truncate">Depan GSG Teknokrat, Kedaton (-5.397140, 105.266790)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Actions Bar -->
+<div class="mt-space-md pt-space-sm flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                SEDANG DITANGANI TIM 2
+              </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Disposisi: 25 Feb 2026, 08:45 WIB</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-space-md py-2 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md hover:bg-secondary-container transition-all flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-base">near_me</span>
+<span>Buka Detail &amp; Navigasi</span>
+</button>
+<button class="px-space-md py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-all flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-base">play_arrow</span>
+<span>Mulai Pengerjaan Fisik</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-highest text-primary hover:bg-surface-variant transition-all" title="Hubungi Dispatcher Dishub">
+<span class="material-symbols-outlined text-lg">headset_mic</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Tiket 2: Rambu Petunjuk Arah Roboh -->
+<article class="mt-space-md p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all">
+<div class="flex flex-wrap items-center justify-between gap-2 pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary uppercase font-bold">
+                Prioritas Sedang
+              </span>
+<span class="font-label-md text-label-md font-bold text-primary">#BL-2026-4410</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">• Dishub / Fasilitas Jalan</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">
+              Antrean Baru - Butuh Konfirmasi
+            </span>
+</div>
+<div class="mt-2 flex flex-col md:flex-row gap-space-md">
+<div class="md:w-36 h-24 rounded-lg overflow-hidden shrink-0 shadow-sm relative">
+<img class="w-full h-full object-cover" data-alt="Tiang rambu petunjuk arah jalan Dishub roboh miring tertabrak bak truk barang di persimpangan jalan protokol Mal Boemi Kedaton Bandar Lampung, dokumentasi laporan warga." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNoDGPg-Qsc-eatrJirZK60Oa9mEHu-R1VU7hMtDK9gNVTTpIzpfms9fwi5ymDWv5iixB6Ihh1Qjv15e8QobOPNW5YLaiRhz57zl9ONHjN-pY7307fxCOBIDMJT0Eyd1k2BqexYObCGt3snSf1moENIEawcbqMhhP4KsPRpFEoFL823Sa06f7ZMU5pEW6YpHPYkNmyE3CybKXVGlritkPKsRVV3lKMOhztt_o6kks">
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">
+                  Rambu Petunjuk Arah Roboh Tertabrak Truk di Simpang Mal Boemi Kedaton
+                </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Tiang rambu menutup 1 lajur lambat arah Rajabasa, diperlukan pemotongan plat besi dan pemancangan ulang tiang fondasi.
+                </p>
+</div>
+<div class="flex items-center justify-between mt-2 pt-2 text-on-surface-variant font-body-sm text-body-sm">
+<span>Lokasi: Simpang MBK Jl. Teuku Umar</span>
+<span class="text-tertiary-container font-semibold">Estimasi Durasi: 45 Menit</span>
+</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Laporan masuk: 25 Menit yang lalu</span>
+<div class="flex items-center gap-2">
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-sm text-label-sm hover:bg-surface-container-highest transition-all">Lihat Foto Bukti</button>
+<button class="px-space-md py-1.5 rounded-lg bg-secondary text-on-secondary font-label-sm text-label-sm hover:bg-secondary-container transition-all font-bold">Terima Tugas Ini</button>
+</div>
+</div>
+</article>
+<!-- Tiket 3: Traffic Light Error -->
+<article class="mt-space-md p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all">
+<div class="flex flex-wrap items-center justify-between gap-2 pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary uppercase font-bold">
+                Kelistrikan &amp; Sinyal
+              </span>
+<span class="font-label-md text-label-md font-bold text-primary">#BL-2026-4395</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">• Dishub / ATCS BDL</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-variant text-on-surface-variant font-label-sm text-label-sm font-semibold">
+              Menunggu Komponen Modul PLC
+            </span>
+</div>
+<div class="mt-2 flex flex-col md:flex-row gap-space-md">
+<div class="md:w-36 h-24 rounded-lg overflow-hidden shrink-0 shadow-sm relative">
+<img class="w-full h-full object-cover" data-alt="Lampu lalu lintas traffic light di persimpangan jalan Sultan Agung Way Halim Bandar Lampung berkedip kuning kedip saat cuaca mendung, petugas Dishub memeriksa boks controller." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJkW1INIFjPxS7vWfgv1-DUpdMn9G9Ed11jirBcyUVdoc1Bn_RMhwqwuPHKfi-AzhlY_Ov54NBgpDux4mVbJ9BY8gENSjTNdGBMnZcZ434VNdBJ985G6OWXpYMAQpcLVRAfQt4SdZjm7uXAlJPjz3y9zblmnwBCUOPot7saFZ1_Gv-P-HEzjPxjm18N5dYI-Xu6GU-hGJK00PwLBlbtyq_u5xMtwAvxqoGuOnboas">
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">
+                  Traffic Light Error Berkedip Kuning di Simpang Jl. Sultan Agung
+                </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Pengendali sirkuit fase mengalami overheat. Penggantian modul regulator dijadwalkan oleh Tim Pemeliharaan Siang.
+                </p>
+</div>
+<div class="flex items-center justify-between mt-2 pt-2 text-on-surface-variant font-body-sm text-body-sm">
+<span>Lokasi: Simpang Jl. Sultan Agung - Jl. Ki Maja</span>
+<span class="text-secondary font-semibold">Armada Cadangan Siaga</span>
+</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Update Status: 10:15 WIB oleh Operator ATCS</span>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-sm text-label-sm hover:bg-surface-container-highest transition-all">Cek Riwayat Modul</button>
+</div>
+</article>
+</div>
+</section>
+<!-- Col Right: Panel SOP, Disposisi & Kontak Cepat (4 Cols) -->
+<aside class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Panduan SOP Geotagging Wajib -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center gap-space-sm pb-space-sm">
+<div class="w-8 h-8 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">fact_check</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">SOP Lapangan Pemkot</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Standar Verifikasi Pelayanan Publik</p>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low mb-space-sm">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-xl shrink-0 mt-0.5">add_a_photo</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+<strong class="font-semibold text-primary">Wajib Unggah Foto Geotagged:</strong> Ambil foto kondisi <span class="px-1.5 py-0.5 rounded bg-surface-variant font-bold">SEBELUM</span> dan <span class="px-1.5 py-0.5 rounded bg-secondary-fixed text-secondary font-bold">SESUDAH</span> penanganan dengan cap waktu &amp; koordinat presisi.
+            </p>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-lowest">
+<span class="material-symbols-outlined text-emerald-600 text-lg">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Pakai Helm &amp; Rompi Pantul K3 Dishub</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-lowest">
+<span class="material-symbols-outlined text-emerald-600 text-lg">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Pasang Traffic Cone min. 15 meter dari mobil tangga</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-lowest">
+<span class="material-symbols-outlined text-emerald-600 text-lg">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Minta Tanda Tangan Digital Warga / Saksi</span>
+</div>
+</div>
+<button class="w-full mt-space-sm py-2 px-space-md rounded-lg bg-surface-container-high text-primary font-label-md text-label-md hover:bg-surface-container-highest transition-all flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-base">download</span>
+<span>Unduh Buku Panduan SOP Satgas</span>
+</button>
+</div>
+<!-- Kontak Siaga Dispatcher & Radio Dishub -->
+<div class="bg-primary text-on-primary p-space-md rounded-xl shadow-md">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-secondary text-on-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">support_agent</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-primary">Dispatcher Dishub</h3>
+<p class="font-label-sm text-label-sm text-tertiary-fixed-dim">Pusat Komando Lapangan BDL</p>
+</div>
+</div>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-fixed animate-pulse"></span>
+</div>
+<div class="space-y-space-sm my-space-sm font-body-sm text-body-sm">
+<div class="p-space-sm rounded-lg bg-primary-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-lg">phone_in_talk</span>
+<div>
+<div class="font-label-sm text-label-sm text-surface-variant">Hotline Internal Dishub</div>
+<div class="font-label-lg text-label-lg text-on-primary font-mono">(0721) 481234</div>
+</div>
+</div>
+<button class="px-2.5 py-1 rounded bg-secondary text-on-secondary font-label-sm text-label-sm hover:bg-secondary-container transition-all">Panggil</button>
+</div>
+<div class="p-space-sm rounded-lg bg-primary-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-lg">radio</span>
+<div>
+<div class="font-label-sm text-label-sm text-surface-variant">Radio Rig VHF Kedaton</div>
+<div class="font-label-lg text-label-lg text-tertiary-fixed font-mono">142.500 MHz (Duplex -)</div>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-tertiary text-tertiary-fixed">CH 04 ON</span>
+</div>
+</div>
+<!-- Tombol Darurat 112 -->
+<a class="w-full flex items-center justify-center gap-2 py-3 px-space-md rounded-lg bg-error hover:bg-error/90 text-on-error font-label-lg text-label-lg transition-all shadow-md active:scale-98" href="tel:112">
+<span class="material-symbols-outlined text-xl">emergency_home</span>
+<span>PANGGILAN DARURAT KOTA (CALL 112)</span>
+</a>
+</div>
+<!-- Quick Note Catatan Tim -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<h4 class="font-headline-sm text-headline-sm text-primary mb-2">Peralatan Mobil Unit 04</h4>
+<ul class="text-body-sm font-body-sm text-on-surface-variant space-y-2">
+<li class="flex items-center justify-between">
+<span>Bohlam LED PJU 120W Philips</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Tersedia (8 unit)</span>
+</li>
+<li class="flex items-center justify-between">
+<span>Kabel Tembaga Saluran Udara 4x16mm</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">50 Meter</span>
+</li>
+<li class="flex items-center justify-between">
+<span>Mesin Las Portabel &amp; Pemotong</span>
+<span class="font-label-sm text-label-sm text-emerald-600 font-semibold">Siap Pakai</span>
+</li>
+<li class="flex items-center justify-between">
+<span>Oli Hidrolik Boom Tangga</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Level 92% (Normal)</span>
+</li>
+</ul>
+</div>
+</aside>
+</div>
+</div>
+<script>
+  // Simple interactive feedback for field operator dashboard buttons
+  document.getElementById('btn-update-gps')?.addEventListener('click', function() {
+    const originalText = this.innerHTML;
+    this.innerHTML = '<span class="material-symbols-outlined text-lg animate-spin">refresh</span><span>Mengirim Koordinat...</span>';
+    setTimeout(() => {
+      this.innerHTML = '<span class="material-symbols-outlined text-lg">check</span><span>GPS Terkini Tersimpan</span>';
+      setTimeout(() => {
+        this.innerHTML = originalText;
+      }, 2500);
+    }, 800);
+  });
+
+  document.getElementById('btn-radio-dispatcher')?.addEventListener('click', function() {
+    alert('Menghubungkan ke Frekuensi VHF 142.500 MHz Satgas Kedaton...');
+  });
+
+  document.getElementById('btn-lapor-kendala')?.addEventListener('click', function() {
+    const kendala = prompt('Masukkan jenis kendala teknis armada atau lapangan:', 'Truk macet di simpang Mall Boemi Kedaton');
+    if (kendala) {
+      alert('Laporan kendala berhasil dikirim ke Dispatcher Command Center Bandar Lampung.');
+    }
+  });
+</script></main><footer class="w-full bg-surface-container-low py-space-md px-space-lg mt-auto"><div class="w-full flex flex-col md:flex-row items-center justify-between gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><div>Copyright©2026 by <strong class="font-label-md text-label-md text-on-surface">Ridho Fatahilah Joeda</strong> and <strong class="font-label-md text-label-md text-on-surface">Dr. Erliyan Redy Susanto, M.Kom</strong></div><div class="text-right">Kolaborasi Riset Strategis: <span class="font-label-md text-label-md text-secondary">Pemerintah Kota Bandar Lampung</span> &amp; <span class="font-label-md text-label-md text-primary">Universitas Teknokrat Indonesia</span></div></div></footer></div>
+
+</body></html>
